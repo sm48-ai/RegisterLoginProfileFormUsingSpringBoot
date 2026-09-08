@@ -1,0 +1,514 @@
+```css
+/* ==============================
+   Registration Page
+   ============================== */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   Body
+   ============================== */
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==============================
+   Main Container
+   ============================== */
+
+.register-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+}
+
+/* ==============================
+   Registration Card
+   ============================== */
+
+.register-card {
+    width: 420px;
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    padding: 30px 35px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    animation: cardOpen 0.7s ease;
+}
+
+/* ==============================
+   Registration Icon
+   ============================== */
+
+.register-icon {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 6px 15px rgba(102, 126, 234, 0.3);
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* ==============================
+   Heading
+   ============================== */
+
+.register-card h2 {
+    text-align: center;
+
+    font-size: 25px;
+
+    color: #333;
+
+    margin-bottom: 5px;
+}
+
+/* ==============================
+   Subtitle
+   ============================== */
+
+.subtitle {
+    text-align: center;
+
+    color: #888;
+
+    font-size: 13px;
+
+    margin-bottom: 22px;
+}
+
+/* ==============================
+   Success Message
+   ============================== */
+
+.success-message {
+    background: #e6f9ed;
+
+    color: #219653;
+
+    border-left: 4px solid #27ae60;
+
+    padding: 8px 10px;
+
+    margin-bottom: 14px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    animation: successShow 0.5s ease;
+}
+
+/* ==============================
+   Error Message
+   ============================== */
+
+.error-message {
+    background: #ffe5e5;
+
+    color: #d63031;
+
+    border-left: 4px solid #ff4d4d;
+
+    padding: 8px 10px;
+
+    margin-bottom: 14px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    animation: errorShow 0.5s ease;
+}
+
+/* ==============================
+   Input Group
+   ============================== */
+
+.input-group {
+    margin-bottom: 11px;
+}
+
+/* ==============================
+   Labels
+   ============================== */
+
+.input-group label {
+    display: block;
+
+    color: #333;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 4px;
+}
+
+/* ==============================
+   Input Boxes
+   ============================== */
+
+.input-group input {
+    width: 100%;
+
+    height: 34px;
+
+    padding: 6px 10px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    background: #f8f8f8;
+
+    font-size: 12px;
+
+    color: #333;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+}
+
+/* Placeholder */
+
+.input-group input::placeholder {
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+/* Input Hover */
+
+.input-group input:hover {
+    border-color: #999;
+}
+
+/* Input Focus */
+
+.input-group input:focus {
+    background: #ffffff;
+
+    border-color: #667eea;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(102, 126, 234, 0.2);
+}
+
+/* ==============================
+   Register Button
+   ============================== */
+
+.register-btn {
+    width: 100%;
+
+    height: 40px;
+
+    padding: 8px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 6px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Button Hover */
+
+.register-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(102, 126, 234, 0.5);
+}
+
+/* Button Click */
+
+.register-btn:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* ==============================
+   Navigation Links
+   ============================== */
+
+.links {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 17px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid #eee;
+}
+
+/* Links */
+
+.links a {
+    text-decoration: none;
+
+    color: #667eea;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+/* Link Hover */
+
+.links a:hover {
+    color: #764ba2;
+
+    transform: translateY(-1px);
+}
+
+/* ==============================
+   Card Animation
+   ============================== */
+
+@keyframes cardOpen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+/* ==============================
+   Icon Animation
+   ============================== */
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ==============================
+   Success Animation
+   ============================== */
+
+@keyframes successShow {
+
+    from {
+        opacity: 0;
+
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+/* ==============================
+   Error Animation
+   ============================== */
+
+@keyframes errorShow {
+
+    from {
+        opacity: 0;
+
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+/* ==============================
+   Tablet
+   ============================== */
+
+@media (max-width: 768px) {
+
+    .register-container {
+        padding: 12px;
+    }
+
+    .register-card {
+        width: 100%;
+
+        max-width: 420px;
+
+        padding: 28px 25px;
+    }
+
+    .register-icon {
+        width: 58px;
+        height: 58px;
+
+        font-size: 25px;
+    }
+
+    .register-card h2 {
+        font-size: 23px;
+    }
+}
+
+/* ==============================
+   Small Mobile
+   ============================== */
+
+@media (max-width: 400px) {
+
+    .register-container {
+        padding: 8px;
+    }
+
+    .register-card {
+        padding: 25px 18px;
+    }
+
+    .register-icon {
+        width: 54px;
+        height: 54px;
+
+        font-size: 23px;
+    }
+
+    .register-card h2 {
+        font-size: 21px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+
+        margin-bottom: 18px;
+    }
+
+    .input-group {
+        margin-bottom: 10px;
+    }
+
+    .input-group label {
+        font-size: 11px;
+
+        margin-bottom: 3px;
+    }
+
+    .input-group input {
+        height: 32px;
+
+        padding: 5px 9px;
+
+        font-size: 11px;
+    }
+
+    .input-group input::placeholder {
+        font-size: 10px;
+    }
+
+    .register-btn {
+        height: 38px;
+
+        font-size: 12px;
+    }
+
+    .links a {
+        font-size: 11px;
+    }
+}
+```

@@ -1,25 +1,24 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
-```
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Registration Page</title>
+    <title>Registration Page</title>
 
-<!-- Registration CSS -->
-<link rel="stylesheet" th:href="@{/css/register.css}">
-```
+    <!-- Registration CSS -->
+    <link rel="stylesheet"
+          th:href="@{/css/register.css}">
 
 </head>
 
 <body>
 
-```
 <div class="register-container">
 
     <div class="register-card">
@@ -38,7 +37,8 @@
 
 
         <!-- Success Message -->
-        <div class="success-message" th:if="${successMsg}">
+        <div class="success-message"
+             th:if="${successMsg}">
 
             <span th:text="${successMsg}"></span>
 
@@ -46,7 +46,8 @@
 
 
         <!-- Error Message -->
-        <div class="error-message" th:if="${errMsg}">
+        <div class="error-message"
+             th:if="${errMsg}">
 
             <span th:text="${errMsg}"></span>
 
@@ -128,8 +129,11 @@
 
 
             <!-- Register Button -->
-            <button type="submit" class="register-btn">
+            <button type="submit"
+                    class="register-btn">
+
                 ✨ Register
+
             </button>
 
         </form>
@@ -151,7 +155,6 @@
     </div>
 
 </div>
-```
 
 </body>
 

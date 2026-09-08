@@ -1,99 +1,86 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
-```
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Login Page</title>
+    <title>My Profile</title>
 
-<!-- External CSS -->
-<link rel="stylesheet" th:href="@{/css/login.css}">
-```
+    <!-- Profile CSS -->
+    <link rel="stylesheet"
+          th:href="@{/css/profile.css}">
 
 </head>
 
 <body>
 
-```
-<div class="login-container">
+<div class="profile-container">
 
-    <div class="login-card">
+    <div class="profile-card">
 
-        <!-- Login Icon -->
-        <div class="login-icon">
-            🔐
+        <!-- Profile Icon -->
+        <div class="profile-icon">
+            👤
         </div>
 
         <!-- Heading -->
-        <h2>Welcome Back!</h2>
+        <h2>My Profile</h2>
 
         <p class="subtitle">
-            Login to your account
+            Welcome to your profile
         </p>
 
-        <!-- Error Message -->
-        <div class="error-message" th:if="${errMsg}">
-            <span th:text="${errMsg}"></span>
+
+        <!-- User Information -->
+
+        <div class="profile-info">
+
+            <p>
+                <strong>Full Name :</strong>
+                <span th:text="${modelUser.name}">
+                    Satish Kumar
+                </span>
+            </p>
+
+            <p>
+                <strong>Email Id :</strong>
+                <span th:text="${modelUser.email}">
+                    satish@gmail.com
+                </span>
+            </p>
+
+            <p>
+                <strong>Phone Number :</strong>
+                <span th:text="${modelUser.phoneNo}">
+                    9876543210
+                </span>
+            </p>
+
         </div>
 
-        <!-- Login Form -->
-        <form th:object="${user}"
-              th:action="@{/loginForm}"
-              method="post">
 
-            <!-- Email -->
-            <div class="input-group">
+        <!-- Profile Status -->
 
-                <label for="email">
-                    Email Id
-                </label>
+        <div class="profile-status">
+            ✓ Account Active
+        </div>
 
-                <input
-                    type="email"
-                    id="email"
-                    th:field="*{email}"
-                    placeholder="Enter your email"
-                    required>
-
-            </div>
-
-            <!-- Password -->
-            <div class="input-group">
-
-                <label for="password">
-                    Password
-                </label>
-
-                <input
-                    type="password"
-                    id="password"
-                    th:field="*{password}"
-                    placeholder="Enter your password"
-                    required>
-
-            </div>
-
-            <!-- Login Button -->
-            <button type="submit" class="login-btn">
-                Login
-            </button>
-
-        </form>
 
         <!-- Navigation Links -->
+
         <div class="links">
 
             <a th:href="@{/}">
                 🏠 Home Page
             </a>
 
-            <a th:href="@{/regPage}">
-                ✨ Register Page
+            <a th:href="@{/loginPage}">
+                🔐 Login Page
             </a>
 
         </div>
@@ -101,8 +88,8 @@
     </div>
 
 </div>
-```
 
 </body>
 
 </html>
+

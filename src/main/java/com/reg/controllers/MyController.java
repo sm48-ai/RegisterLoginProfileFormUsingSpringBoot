@@ -48,7 +48,7 @@ public class MyController {
 			model.addAttribute("modelUser", validUser);
 			return "profile";
 		}else {
-			model.addAttribute("errMsg", "Email id And Password Didny Match");
+			model.addAttribute("errMsg", "Email id And Password Didnt Match");
 			return "login";
 		}
 		
