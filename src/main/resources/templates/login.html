@@ -1,31 +1,114 @@
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
+
+```
 <meta charset="UTF-8">
-<title>Insert title here</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login Page</title>
+
+<!-- External CSS -->
+<link rel="stylesheet" th:href="@{/css/login.css}">
+```
+
 </head>
+
 <body>
-<h2>Login Here</h2>
+
+```
+<div class="login-container">
+
+    <div class="login-card">
+
+        <!-- Login Icon -->
+        <div class="login-icon">
+            🔐
+        </div>
+
+        <!-- Heading -->
+        <h2>Welcome Back!</h2>
+
+        <p class="subtitle">
+            Login to your account
+        </p>
 
 
+        <!-- Error Message -->
+        <div class="error-message" th:if="${errMsg}">
+            <span th:text="${errMsg}"></span>
+        </div>
 
-<div th:if="${errMsg}">
-    <h3 style="color: red;" th:text="${errMsg}"></h3>
+
+        <!-- Login Form -->
+        <form th:object="${user}"
+              th:action="@{/loginForm}"
+              method="post">
+
+
+            <!-- Email -->
+            <div class="input-group">
+
+                <label for="email">
+                    Email Id
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    th:field="*{email}"
+                    placeholder="Enter your email"
+                    required>
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    th:field="*{password}"
+                    placeholder="Enter your password"
+                    required>
+
+            </div>
+
+
+            <!-- Login Button -->
+            <button type="submit" class="login-btn">
+                Login
+            </button>
+
+        </form>
+
+
+        <!-- Navigation Links -->
+        <div class="links">
+
+            <a href="index.html">
+                🏠 Home Page
+            </a>
+
+            <a href="regPage">
+                ✨ Register Page
+            </a>
+
+        </div>
+
+    </div>
+
 </div>
-
-<form th:object="${user}" th:action="@{/loginForm}" method="post">
-    
-    Email Id : <input type="text" th:field="*{email}" /> <br/><br/>
-    Password : <input type="text" th:field="*{password}" /> <br/><br/>
-   
-    
-    <input type="submit" value="Login">
-</form>
-
-<br><br>
-<a href="index.html">Home Page</a> 
-<br><br>
-<a href="regPage">Register Page</a> 
+```
 
 </body>
+
 </html>

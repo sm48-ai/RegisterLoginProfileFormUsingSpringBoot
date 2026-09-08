@@ -1,0 +1,425 @@
+/* =========================================
+   LOGIN PAGE - ANIMATED CSS
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        -45deg,
+        #667eea,
+        #764ba2,
+        #6dd5ed,
+        #2193b0
+    );
+
+    background-size: 400% 400%;
+    animation: gradientAnimation 12s ease infinite;
+}
+
+
+/* =========================================
+   BACKGROUND ANIMATION
+   ========================================= */
+
+@keyframes gradientAnimation {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =========================================
+   LOGIN CONTAINER
+   ========================================= */
+
+.login-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* =========================================
+   LOGIN CARD
+   ========================================= */
+
+.login-card {
+    width: 400px;
+    padding: 40px 35px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    text-align: center;
+
+    animation: cardAnimation 1s ease;
+}
+
+
+/* =========================================
+   CARD ANIMATION
+   ========================================= */
+
+@keyframes cardAnimation {
+
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   LOGIN ICON
+   ========================================= */
+
+.login-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    font-size: 35px;
+
+    box-shadow:
+        0 10px 25px rgba(102, 126, 234, 0.4);
+
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================================
+   ICON FLOATING ANIMATION
+   ========================================= */
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================================
+   HEADING
+   ========================================= */
+
+.login-card h2 {
+    color: #333333;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #777777;
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   INPUT GROUP
+   ========================================= */
+
+.input-group {
+    text-align: left;
+
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #444444;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   INPUT BOX
+   ========================================= */
+
+.input-group input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 2px solid #e2e2e2;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: #fafafa;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================
+   INPUT HOVER
+   ========================================= */
+
+.input-group input:hover {
+    border-color: #b7b7b7;
+}
+
+
+/* =========================================
+   INPUT FOCUS
+   ========================================= */
+
+.input-group input:focus {
+    border-color: #667eea;
+
+    background: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+
+/* =========================================
+   PLACEHOLDER
+   ========================================= */
+
+.input-group input::placeholder {
+    color: #aaaaaa;
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+   ========================================= */
+
+.login-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(102, 126, 234, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   BUTTON HOVER
+   ========================================= */
+
+.login-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(102, 126, 234, 0.45);
+}
+
+
+/* =========================================
+   BUTTON CLICK
+   ========================================= */
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+   ========================================= */
+
+.error-message {
+    padding: 12px;
+
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+
+    background: #ffe5e5;
+
+    border-left: 4px solid #ff4d4d;
+
+    color: #d63031;
+
+    font-size: 14px;
+
+    animation: errorAnimation 0.5s ease;
+}
+
+
+/* =========================================
+   ERROR ANIMATION
+   ========================================= */
+
+@keyframes errorAnimation {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+.links {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+.links a {
+    text-decoration: none;
+
+    color: #667eea;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================
+   LINK HOVER
+   ========================================= */
+
+.links a:hover {
+    color: #764ba2;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .login-card {
+        width: 100%;
+
+        padding: 30px 22px;
+    }
+
+    .login-card h2 {
+        font-size: 25px;
+    }
+
+    .links {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+}

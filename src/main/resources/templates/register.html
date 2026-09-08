@@ -1,33 +1,158 @@
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
+
+```
 <meta charset="UTF-8">
-<title>Insert title here</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Registration Page</title>
+
+<!-- Registration CSS -->
+<link rel="stylesheet" th:href="@{/css/register.css}">
+```
+
 </head>
+
 <body>
-<h2>This is Registration Page</h2>
 
-<div th:if="${successMsg}">
-    <h3 style="color: green;" th:text="${successMsg}"></h3>
+```
+<div class="register-container">
+
+    <div class="register-card">
+
+        <!-- Registration Icon -->
+        <div class="register-icon">
+            👤
+        </div>
+
+        <!-- Heading -->
+        <h2>Create Account</h2>
+
+        <p class="subtitle">
+            Register a new account
+        </p>
+
+
+        <!-- Success Message -->
+        <div class="success-message" th:if="${successMsg}">
+
+            <span th:text="${successMsg}"></span>
+
+        </div>
+
+
+        <!-- Error Message -->
+        <div class="error-message" th:if="${errMsg}">
+
+            <span th:text="${errMsg}"></span>
+
+        </div>
+
+
+        <!-- Registration Form -->
+        <form th:object="${user1}"
+              th:action="@{/regForm}"
+              method="post">
+
+
+            <!-- Name -->
+            <div class="input-group">
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    th:field="*{name}"
+                    placeholder="Enter your name"
+                    required>
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="input-group">
+
+                <label for="email">
+                    Email Id
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    th:field="*{email}"
+                    placeholder="Enter your email"
+                    required>
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    th:field="*{password}"
+                    placeholder="Create a password"
+                    required>
+
+            </div>
+
+
+            <!-- Phone -->
+            <div class="input-group">
+
+                <label for="phoneNo">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phoneNo"
+                    th:field="*{phoneNo}"
+                    placeholder="Enter your phone number"
+                    required>
+
+            </div>
+
+
+            <!-- Register Button -->
+            <button type="submit" class="register-btn">
+                ✨ Register
+            </button>
+
+        </form>
+
+
+        <!-- Navigation Links -->
+        <div class="links">
+
+            <a th:href="@{/}">
+                🏠 Home Page
+            </a>
+
+            <a th:href="@{/loginPage}">
+                🔐 Login Page
+            </a>
+
+        </div>
+
+    </div>
+
 </div>
-
-<div th:if="${errMsg}">
-    <h3 style="color: red;" th:text="${errMsg}"></h3>
-</div>
-
-<form th:object="${user1}" th:action="@{/regForm}" method="post">
-    Name : <input type="text" th:field="*{name}"/> <br/><br/>
-    Email Id : <input type="text" th:field="*{email}" /> <br/><br/>
-    Password : <input type="text" th:field="*{password}" /> <br/><br/>
-    Phone No : <input type="text" th:field="*{phoneNo}"/> <br/><br/>
-    
-    <input type="submit" value="Register">
-</form>
-
-<br><br>
-<a href="index.html">Home Page</a> 
-<br><br>
-<a href="loginPage">Login Page</a> 
+```
 
 </body>
+
 </html>
