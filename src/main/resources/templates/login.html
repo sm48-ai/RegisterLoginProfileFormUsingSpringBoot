@@ -5,29 +5,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>This is Registration Page</h2>
+<h2>Login Here</h2>
 
-<div th:if="${successMsg}">
-    <h3 style="color: green;" th:text="${successMsg}"></h3>
-</div>
+
 
 <div th:if="${errMsg}">
     <h3 style="color: red;" th:text="${errMsg}"></h3>
 </div>
 
-<form th:object="${user1}" th:action="@{/regForm}" method="post">
-    Name : <input type="text" th:field="*{name}"/> <br/><br/>
+<form th:object="${user}" th:action="@{/loginForm}" method="post">
+    
     Email Id : <input type="text" th:field="*{email}" /> <br/><br/>
     Password : <input type="text" th:field="*{password}" /> <br/><br/>
-    Phone No : <input type="text" th:field="*{phoneNo}"/> <br/><br/>
+   
     
-    <input type="submit" value="Register">
+    <input type="submit" value="Login">
 </form>
 
 <br><br>
 <a href="index.html">Home Page</a> 
 <br><br>
-<a href="loginPage">Login Page</a> 
+<a href="regPage">Register Page</a> 
 
 </body>
 </html>
